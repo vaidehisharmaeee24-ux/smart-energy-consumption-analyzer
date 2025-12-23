@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Energy Consumption Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Smart Energy Consumption Analyzer</h1>
+
+    <!-- Input Card -->
+    <div class="card">
+      <h2>Add / Edit Appliance</h2>
+
+      <input type="text" id="applianceName" placeholder="Appliance Name">
+      <input type="number" id="power" placeholder="Power (Watts)">
+      <input type="number" id="hours" placeholder="Hours per day">
+      <input type="number" id="unitCost" placeholder="Cost per unit (₹/kWh)">
+
+      <div class="btn-group">
+        <button id="addBtn">Add Appliance</button>
+        <button id="updateBtn" class="hidden">Update Appliance</button>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>Appliance</th>
+          <th>Power (W)</th>
+          <th>Hours</th>
+          <th>Energy (kWh)</th>
+          <th>Cost (₹)</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+
+    <!-- Summary -->
+    <div class="card">
+      <p id="totalEnergy">Total Energy: 0 kWh</p>
+      <p id="totalCost">Total Cost: ₹0</p>
+      <p id="peakUsage"></p>
+    </div>
+
+    <!-- Chart -->
+    <div class="card">
+      <h2>Energy Consumption Chart</h2>
+      <canvas id="energyChart"></canvas>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
